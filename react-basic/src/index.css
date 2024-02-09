@@ -1,13 +1,31 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+*{
+  font-family: 'Single Day', cursive;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  background-color: red;
+  color:aliceblue;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+li{
+  list-style: none;
+}
+
+main{
+  min-height: 90vh;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
 }

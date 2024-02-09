@@ -1,28 +1,24 @@
 import { useState } from "react";
-export default function StudentList() {
-  const [students, setStudent] = useState([
-    { id: 1, name: "Dutchie" },
-    { id: 2, name: "Kongpop" },
-    { id: 3, name: "Music" },
-  ]);
-  function deleteStudent(id) {
-    setStudent(students.filter((item) => item.id !== id));
-  }
+import "./studentList.css";
+import Item from "./item";
+
+export default function StudentList(props) {
   const [show, setShow] = useState(true);
+  const {students, deleteStudent}=props;
+  const btnStyle = {
+    background: show? "green" : "blue"
+  }
 
   return (
     <>
-      <h2>number of students = {students.length}</h2>
-      <button onClick={() => setShow(!show)}>Toggle</button>
       <ul>
+        <div className="header">
+          <h2 style={{color:"green", fontSize:"40px"}}>number of students = {students.length}</h2>
+          <button onClick={() => setShow(!show)} style={btnStyle}>{show?"hide":"show"}</button>
+        </div>
         {show &&
-          students.map((item) => (
-            <li key={item.id}>
-              <p>
-                {item.id} - {item.name}
-              </p>
-              <button onClick={() => deleteStudent(item.id)}>delete</button>
-            </li>
+          students.map((data) => (
+            <Item key={data.id} data={data} deleteStudent={deleteStudent}/>
           ))}
       </ul>
     </>
